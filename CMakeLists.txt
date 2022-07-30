@@ -30,6 +30,7 @@ set(game_framework_src
         Enemy.h
         Enemy.cpp
         LoaderParams.h
+        Vector2D.h
 )
 
 add_executable(${PROJECT_NAME} ${game_framework_src})
