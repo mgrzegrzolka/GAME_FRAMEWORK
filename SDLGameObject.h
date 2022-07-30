@@ -2,6 +2,7 @@
 #define __SDLGameObject__
 
 #include "GameObject.h"
+#include "Vector2D.h"
 
 class SDLGameObject : public GameObject
 {
@@ -18,8 +19,9 @@ class SDLGameObject : public GameObject
         int m_currentFrame;
         int m_currentRow;
 
-        int m_x;
-        int m_y;
+        //int m_x;
+        //int m_y;
+        Vector2D m_position;
 
         int m_width;
         int m_height;
