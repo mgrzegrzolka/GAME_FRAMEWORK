@@ -23,7 +23,7 @@ public:
     Vector2D& operator+= (const Vector2D &v2)
     {
         m_x += v2.m_x;
-        m_y += v2.m_x;
+        m_y += v2.m_y;
         return *this;
     }
 
@@ -47,7 +47,7 @@ public:
     Vector2D& operator-= (const Vector2D &v2)
     {
         m_x -= v2.m_x;
-        m_y -= v2.m_x;
+        m_y -= v2.m_y;
         return *this;
     }
 
