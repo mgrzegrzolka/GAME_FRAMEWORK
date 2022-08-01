@@ -21,6 +21,7 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, in
     printf("Info: init() success\n");
     m_bRunning = true;
     
+    TheInputHandler::Instance()->initialiseJoysticks();
     TheTextureManager::Instance()->load("resources/src/animate-alpha.png", "animate", g_pRenderer);
     
     //m_go = new GameObject();
@@ -58,6 +59,7 @@ void Game::draw()
 void Game::clean()
 {
     printf("Info: clean() clean game\n");
+    TheInputHandler::Instance()->clean();
     SDL_DestroyWindow(g_pWindow);
     SDL_DestroyRenderer(g_pRenderer);
 }
@@ -71,24 +73,10 @@ void Game::update()
 
 void Game::handleEvents()
 {
-    SDL_Event event;
-    while(SDL_PollEvent(&event)){
-        switch(event.type){
-            case SDL_QUIT:
-                printf("Info: handleEvents() SDL_QUIT quit game\n");
-                m_bRunning = false;
-                break;
-            case SDL_KEYDOWN:
-                switch(event.key.keysym.sym){
-                    case SDLK_q:
-                        printf("Info: handleEvents() SDLK_Q quit game\n");
-                        m_bRunning = false;
-                        break;
-                    default:
-                        break;
-                }
-            default:
-                break;
-        }
-    }
+    TheInputHandler::Instance()->update();
+}
+
+void Game::quit()
+{
+    m_bRunning = false;
 }

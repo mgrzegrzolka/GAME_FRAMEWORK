@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "TextureManager.h"
+#include "InputHandler.h"
 #include "Player.h"
 #include "Enemy.h"
 
@@ -26,6 +27,7 @@ public:
     void clean();
     bool running() { return m_bRunning; }
     SDL_Renderer* getRenderer() const { return g_pRenderer;}
+    void quit();
 private:
     Game() {}
     ~Game() {}
