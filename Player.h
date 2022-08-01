@@ -11,6 +11,7 @@ class Player : public SDLGameObject
         void draw();
         void update();
         void clean();
+        void handleInput();
 };
 
 #endif /* defined(__Player__) */
