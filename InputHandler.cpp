@@ -16,11 +16,13 @@ void InputHandler::update()
     int whichOne;
 
     while(SDL_PollEvent(&event)){
-        if(event.type == SDL_QUIT) {
+        switch(event.type){
+        case SDL_QUIT:
             printf("Info: handleEvents() SDL_QUIT quit game\n");
             TheGame::Instance()->quit();
-        }
-        if(event.type == SDL_KEYDOWN) {
+            break;
+        
+        case SDL_KEYDOWN:
             switch(event.key.keysym.sym){
                 case SDLK_q:
                     printf("Info: handleEvents() SDLK_Q quit game\n");
@@ -29,8 +31,8 @@ void InputHandler::update()
                 default:
                     break;
             }
-        }
-        if(event.type == SDL_JOYAXISMOTION) {
+            break;
+        case SDL_JOYAXISMOTION:
             whichOne = event.jaxis.which;
             /* https://wiki.libsdl.org/SDL_GameControllerAxis */
             /* FIST  STICK */
@@ -71,16 +73,16 @@ void InputHandler::update()
                     m_joystickValues[whichOne].second->setY(0);
                 }
             }
-        }
-        if(event.type == SDL_JOYBUTTONDOWN) {
+            break;
+        case SDL_JOYBUTTONDOWN:
             whichOne = event.jaxis.which;
             m_buttonStates[whichOne][event.jbutton.button] = true;
-        }
-        if(event.type == SDL_JOYBUTTONUP) {
+            break;
+        case SDL_JOYBUTTONUP:
             whichOne = event.jaxis.which;
             m_buttonStates[whichOne][event.jbutton.button] = false;
-        }
-        if(event.type == SDL_MOUSEBUTTONDOWN) {
+            break;
+        case SDL_MOUSEBUTTONDOWN:
             if(event.button.button = SDL_BUTTON_LEFT) {
                 m_mouseButtonStates[LEFT] = true;
             }
@@ -90,8 +92,8 @@ void InputHandler::update()
             if(event.button.button = SDL_BUTTON_RIGHT) {
                 m_mouseButtonStates[RIGHT] = true;
             }
-        }
-        if(event.type == SDL_MOUSEBUTTONUP) {
+            break;
+        case SDL_MOUSEBUTTONUP:
             if(event.button.button = SDL_BUTTON_LEFT) {
                 m_mouseButtonStates[LEFT] = false;
             }
@@ -101,8 +103,10 @@ void InputHandler::update()
             if(event.button.button = SDL_BUTTON_RIGHT) {
                 m_mouseButtonStates[RIGHT] = false;
             }
+            break;
+        default:
+                break;
         }
-        
     }
 }
 
