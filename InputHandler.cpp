@@ -4,6 +4,12 @@
 
 InputHandler *InputHandler::s_pInstance = 0;
 
+InputHandler::InputHandler() {
+    for(int i = 0; i <= RIGHT; i++) { /* mouse buttons 0-left 1-middle 2-right. On start default false */ 
+        m_mouseButtonStates.push_back(false);
+    }
+}
+
 void InputHandler::update()
 {
     SDL_Event event;
@@ -73,6 +79,28 @@ void InputHandler::update()
         if(event.type == SDL_JOYBUTTONUP) {
             whichOne = event.jaxis.which;
             m_buttonStates[whichOne][event.jbutton.button] = false;
+        }
+        if(event.type == SDL_MOUSEBUTTONDOWN) {
+            if(event.button.button = SDL_BUTTON_LEFT) {
+                m_mouseButtonStates[LEFT] = true;
+            }
+            if(event.button.button = SDL_BUTTON_MIDDLE) {
+                m_mouseButtonStates[MIDDLE] = true;
+            }
+            if(event.button.button = SDL_BUTTON_RIGHT) {
+                m_mouseButtonStates[RIGHT] = true;
+            }
+        }
+        if(event.type == SDL_MOUSEBUTTONUP) {
+            if(event.button.button = SDL_BUTTON_LEFT) {
+                m_mouseButtonStates[LEFT] = false;
+            }
+            if(event.button.button = SDL_BUTTON_MIDDLE) {
+                m_mouseButtonStates[MIDDLE] = false;
+            }
+            if(event.button.button = SDL_BUTTON_RIGHT) {
+                m_mouseButtonStates[RIGHT] = false;
+            }
         }
         
     }
