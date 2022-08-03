@@ -33,21 +33,25 @@ void Player::handleInput()
 {
     int vValue;
     if(TheInputHandler::Instance()->joysticksInitialised()) {
-        vValue = TheInputHandler::Instance()->xvalue(0, 1); /* joy nr 0 - left stick x */
+        vValue = TheInputHandler::Instance()->xvalue(1, 1); /* joy nr 1(2nd) - left stick x */
         if((vValue > 0) || (vValue < 0)) {
             m_velocity.setX((float)vValue);
         }
-        vValue = TheInputHandler::Instance()->yvalue(0, 1); /*  joy nr 0 -  left stick y */
+        vValue = TheInputHandler::Instance()->yvalue(1, 1); /*  joy nr 1(2nd) -  left stick y */
         if((vValue > 0) || (vValue < 0)) {
             m_velocity.setY((float)vValue);
         }
-        vValue = TheInputHandler::Instance()->xvalue(0, 2); /*  joy nr 0 -  right stick x */
+        vValue = TheInputHandler::Instance()->xvalue(1, 2); /*  joy nr 1(2nd) -  right stick x */
         if((vValue > 0) || (vValue < 0)) {
             m_velocity.setX((float)vValue);
         }
-        vValue = TheInputHandler::Instance()->yvalue(0, 2); /*  joy nr 0 -  right stick x */
+        vValue = TheInputHandler::Instance()->yvalue(1, 2); /*  joy nr 1(2nd) -  right stick x */
         if((vValue > 0) || (vValue < 0)) {
             m_velocity.setY((float)vValue);
+        }
+        vValue = TheInputHandler::Instance()->getButtonState(1, 3); /* joy nr 1(2nd) button nr 3(4th) */
+        if(vValue) {
+            m_velocity.setX(1);
         }
     }
 }
