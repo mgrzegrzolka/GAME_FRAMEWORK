@@ -9,6 +9,7 @@ InputHandler::InputHandler() {
         m_mouseButtonStates.push_back(false);
     }
     m_mousePosition = new Vector2D(0, 0);
+    m_keystate = SDL_GetKeyboardState(0);
 }
 
 void InputHandler::update()
@@ -182,3 +183,15 @@ int InputHandler::yvalue(int joy, int stick)
     }
     return 0;
 } 
+
+bool InputHandler::isKeyDown(SDL_Scancode key)
+{
+    if(m_keystate != 0) {
+        if(m_keystate[key] == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    } 
+    return false;
+}

@@ -39,6 +39,7 @@ public:
     Vector2D* get_mousePosition() {
         return m_mousePosition;
     }
+    bool isKeyDown(SDL_Scancode key);
 
 private:
     InputHandler();
@@ -51,6 +52,7 @@ private:
     Vector2D *m_mousePosition;
     bool m_bJoysticksInitialised;
     const int m_joystickDeadZone = 10000;
+    const Uint8 *m_keystate;
 };
 
 typedef InputHandler TheInputHandler;
