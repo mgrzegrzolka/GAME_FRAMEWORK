@@ -8,6 +8,7 @@ InputHandler::InputHandler() {
     for(int i = 0; i <= RIGHT; i++) { /* mouse buttons 0-left 1-middle 2-right. On start default false */ 
         m_mouseButtonStates.push_back(false);
     }
+    m_mousePosition = new Vector2D(0, 0);
 }
 
 void InputHandler::update()
@@ -103,6 +104,10 @@ void InputHandler::update()
             if(event.button.button = SDL_BUTTON_RIGHT) {
                 m_mouseButtonStates[RIGHT] = false;
             }
+            break;
+        case SDL_MOUSEMOTION:
+            m_mousePosition->setX(event.motion.x);
+            m_mousePosition->setY(event.motion.y);
             break;
         default:
                 break;

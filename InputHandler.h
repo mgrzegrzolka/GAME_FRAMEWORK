@@ -36,6 +36,9 @@ public:
     bool getMouseButtonState(int buttonNumber) {
         return m_mouseButtonStates[buttonNumber];
     }
+    Vector2D* get_mousePosition() {
+        return m_mousePosition;
+    }
 
 private:
     InputHandler();
@@ -45,6 +48,7 @@ private:
     std::vector<std::pair<Vector2D*, Vector2D*>> m_joystickValues;
     std::vector<std::vector<bool>> m_buttonStates;
     std::vector<bool> m_mouseButtonStates;
+    Vector2D *m_mousePosition;
     bool m_bJoysticksInitialised;
     const int m_joystickDeadZone = 10000;
 };
