@@ -41,6 +41,20 @@ public:
     }
     bool isKeyDown(SDL_Scancode key);
 
+    //handle keboard events
+    void onKeyDown();
+    void onKeyUp();
+
+    //handle mouse events
+    void onMouseMove(SDL_Event &event);
+    void onMouseButtonDown(SDL_Event &event);
+    void onMouseButtonUp(SDL_Event &event);
+
+    //handle joysticks events
+    void onJoystickAxisMove(SDL_Event &event);
+    void onJoystickButtonDown(SDL_Event &event);
+    void onJoystickButtonUp(SDL_Event &event);
+
 private:
     InputHandler();
     ~InputHandler() {}
