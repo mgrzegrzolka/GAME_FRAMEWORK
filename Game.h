@@ -6,6 +6,9 @@
 #include "InputHandler.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "GameStateMachine.h"
+#include "MenuState.h"
+#include "PlayState.h"
 
 class Game
 {
@@ -49,6 +52,7 @@ private:
     GameObject *m_enemy;
 
     std::vector<GameObject*> m_gameObjects;
+    GameStateMachine *m_pGameStateMachine;
 };
 
 typedef Game TheGame;

@@ -33,6 +33,13 @@ set(game_framework_src
         Vector2D.h
         InputHandler.h
         InputHandler.cpp
+        GameState.h
+        MenuState.h
+        MenuState.cpp
+        PlayState.h
+        PlayState.cpp
+        GameStateMachine.h
+        GameStateMachine.cpp
 )
 
 add_executable(${PROJECT_NAME} ${game_framework_src})
