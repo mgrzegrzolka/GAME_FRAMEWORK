@@ -40,6 +40,8 @@ set(game_framework_src
         PlayState.cpp
         GameStateMachine.h
         GameStateMachine.cpp
+        MenuButton.h
+        MenuButton.cpp
 )
 
 add_executable(${PROJECT_NAME} ${game_framework_src})
