@@ -16,7 +16,7 @@ int main(int argc, char** argv)
         printf("Error: init() failed");
         return 0;
     }
-    printf("Info: game init success!");
+    printf("Info: game init success!\n");
     while(TheGame::Instance()->running()) {
         frameStart = SDL_GetTicks();
 
