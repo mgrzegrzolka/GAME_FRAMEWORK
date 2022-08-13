@@ -6,6 +6,8 @@
 #include "GameObject.h"
 #include "TextureManager.h"
 #include "Game.h"
+#include "PauseState.h"
+
 
 class PlayState : public GameState
 {
