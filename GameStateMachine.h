@@ -12,8 +12,12 @@ public:
 
     void update();
     void render();
+    
+    bool getNewState() { return newState; }
+    void changeState() { newState = false; }
 private:
     std::vector<GameState*> m_gameStates;
+    bool newState;
 };
 
 #endif /* defined(__GameStateMachine__) */

@@ -8,6 +8,10 @@ void PlayState::update()
         TheGame::Instance()->getStateMachine()->pushState(new PauseState());
     }
     for(int i = 0; i < m_gameObjects.size(); i++) {
+        if(TheGame::Instance()->getStateMachine()->getNewState()) {
+            TheGame::Instance()->getStateMachine()->changeState();
+            return;
+        }
         m_gameObjects[i]->update();
     }
 }

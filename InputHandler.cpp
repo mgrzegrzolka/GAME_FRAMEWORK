@@ -159,26 +159,26 @@ void InputHandler::onMouseMove(SDL_Event &event)
 
 void InputHandler::onMouseButtonDown(SDL_Event &event)
 {
-    if(event.button.button = SDL_BUTTON_LEFT) {
+    if(event.button.button == SDL_BUTTON_LEFT) {
         m_mouseButtonStates[LEFT] = true;
     }
-    if(event.button.button = SDL_BUTTON_MIDDLE) {
+    if(event.button.button == SDL_BUTTON_MIDDLE) {
         m_mouseButtonStates[MIDDLE] = true;
     }
-    if(event.button.button = SDL_BUTTON_RIGHT) {
+    if(event.button.button == SDL_BUTTON_RIGHT) {
         m_mouseButtonStates[RIGHT] = true;
     }
 }
 
 void InputHandler::onMouseButtonUp(SDL_Event &event)
 {
-    if(event.button.button = SDL_BUTTON_LEFT) {
+    if(event.button.button == SDL_BUTTON_LEFT) {
         m_mouseButtonStates[LEFT] = false;
     }
-    if(event.button.button = SDL_BUTTON_MIDDLE) {
+    if(event.button.button == SDL_BUTTON_MIDDLE) {
         m_mouseButtonStates[MIDDLE] = false;
     }
-    if(event.button.button = SDL_BUTTON_RIGHT) {
+    if(event.button.button == SDL_BUTTON_RIGHT) {
         m_mouseButtonStates[RIGHT] = false;
     }
 }

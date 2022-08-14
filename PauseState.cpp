@@ -5,6 +5,10 @@ const std::string PauseState::s_pauseID = "PAUSE";
 void PauseState::update() 
 {
     for(int i = 0; i < m_gameObjects.size(); i++) {
+        if(TheGame::Instance()->getStateMachine()->getNewState()) {
+            TheGame::Instance()->getStateMachine()->changeState();
+            return;
+        }
         m_gameObjects[i]->update();
     }
 }
@@ -32,7 +36,7 @@ bool PauseState::onEnter()
     m_gameObjects.push_back(button1);
     m_gameObjects.push_back(button2);
     
-    printf("Entering MenuState\n");
+    printf("Entering PauseState\n");
     return true;
 }
 
@@ -44,13 +48,15 @@ bool PauseState::onExit()
     m_gameObjects.clear();
     TheTextureManager::Instance()->clearFromTextureMap("mainbutton");
     TheTextureManager::Instance()->clearFromTextureMap("resumebutton");
-    printf("Exiting PauseState\n");
+    printf("Exiting PauseState onExit\n");
     return true;
 }
 
 void PauseState::s_pauseToMain()
 {
+    TheGame::Instance()->getStateMachine()->popState();
     TheGame::Instance()->getStateMachine()->changeState(new MenuState());
+    printf("Exiting PauseState s_pauseToMain\n");
 }
 void PauseState::s_resumePlay()
 {
