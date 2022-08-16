@@ -14,7 +14,7 @@ public:
     void setY(float y) { m_y = y; }
 
     float lenght() { return sqrt((m_x * m_x) + (m_y * m_y)); }
-
+    
     Vector2D operator+ (const Vector2D &v2)
     {
         return Vector2D(m_x + v2.m_x, m_y + v2.m_y);

@@ -28,7 +28,7 @@ void Player::update()
 
 void Player::clean()
 {
-
+    SDLGameObject::clean();
 }
 
 void Player::handleInput()

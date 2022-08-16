@@ -44,6 +44,11 @@ set(game_framework_src
         MenuButton.cpp
         PauseState.h
         PauseState.cpp
+        AnimatedGraphic.h
+        AnimatedGraphic.cpp
+        GameOverState.h
+        GameOverState.cpp
+
 )
 
 add_executable(${PROJECT_NAME} ${game_framework_src})

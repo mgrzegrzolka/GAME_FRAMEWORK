@@ -7,8 +7,8 @@ class LoaderParams
 {
     public:
 
-       LoaderParams(int x, int y, int width, int height, std::string textureID)
-       : m_x(x), m_y(y), m_width(width), m_height(height), m_textureID(textureID)
+       LoaderParams(int x, int y, int width, int height, std::string textureID, int numFrames = 1)
+       : m_x(x), m_y(y), m_width(width), m_height(height), m_textureID(textureID), m_numFrames(m_numFrames)
        {
 
        }
@@ -18,6 +18,7 @@ class LoaderParams
        int getwidth() const { return m_width; }
        int getheight() const { return m_height; }
        std::string getTextureID() const { return m_textureID; }
+       int getNumFrames() const { return m_numFrames; }
 
     private:
 
@@ -26,6 +27,7 @@ class LoaderParams
         int m_width;
         int m_height;
         std::string m_textureID;
+        int m_numFrames;
 
 };
 

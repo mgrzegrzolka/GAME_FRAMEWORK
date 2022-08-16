@@ -11,7 +11,9 @@ class SDLGameObject : public GameObject
         virtual void draw();
         virtual void update();
         virtual void clean();
-    
+        virtual Vector2D& getPosition() { return m_position; }
+        virtual int getWidth() { return m_width; }
+        virtual int getHeight() { return m_height; }
     protected:
         
         std::string m_textureID;
