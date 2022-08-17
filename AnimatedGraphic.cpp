@@ -7,7 +7,7 @@ AnimatedGraphic::AnimatedGraphic(const LoaderParams* pParams, int animspeed) : S
 
 void AnimatedGraphic::update()
 {
-    m_currentFrame = int(((SDL_GetTicks() / (1000 / m_animSpeed)) % 2/*m_numFrames*/));
+    m_currentFrame = int(((SDL_GetTicks() / (1000 / m_animSpeed)) % m_numFrames));
 }
 
 void AnimatedGraphic::draw()

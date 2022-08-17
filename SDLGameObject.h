@@ -29,6 +29,7 @@ class SDLGameObject : public GameObject
 
         int m_width;
         int m_height;
+        int m_numFrames;
 };
 
 #endif /* defined(__SDLGameObject__) */

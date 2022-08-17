@@ -9,6 +9,8 @@ GameObject(pParams), m_position(pParams->getX(), pParams->getY()), m_velocity(0,
     m_width = pParams->getwidth();
     m_height = pParams->getheight();
 
+    m_numFrames = pParams->getNumFrames();
+
     m_currentFrame = 1;
     m_currentRow = 1;
 }
