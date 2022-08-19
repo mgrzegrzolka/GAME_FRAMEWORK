@@ -48,6 +48,8 @@ set(game_framework_src
         AnimatedGraphic.cpp
         GameOverState.h
         GameOverState.cpp
+        GameObjectFactory.h
+        GameObjectFactory.cpp
 
 )
 
