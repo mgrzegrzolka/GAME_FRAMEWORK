@@ -15,7 +15,7 @@ endif(WIN32)
 
 include_directories(externals)
 
-#common part od source code
+#common part od source code 
 set(game_framework_src
         main.cpp
         Game.h
